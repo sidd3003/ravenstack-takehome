@@ -26,6 +26,8 @@ Support Experience Matters: The number of recent support tickets and the time it
 
 Plan Tier & Churn Rate: There is a clear correlation between the customer's plan tier and their likelihood to churn. As shown in the chart below, the churn rate is relatively consistent across the different paid tiers, but a deeper analysis of the underlying data suggests that free or lower-priced tiers likely have a higher churn rate.
 
+
+
 Common Churn Reasons: A look at customer feedback confirms that cost and poor support are the leading reasons for churn. This supports the findings from the predictive model and highlights key areas for intervention.
 
 B. Beta Feature Adoption
