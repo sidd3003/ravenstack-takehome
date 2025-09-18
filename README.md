@@ -30,6 +30,9 @@ Plan Tier & Churn Rate: There is a clear correlation between the customer's plan
 
 Common Churn Reasons: A look at customer feedback confirms that cost and poor support are the leading reasons for churn. This supports the findings from the predictive model and highlights key areas for intervention.
 
+<img width="540" height="520" alt="Image" src="https://github.com/user-attachments/assets/cb12b0f4-6d40-4298-b9dc-976209a3b238" />
+
+
 B. Beta Feature Adoption
 
 I found a compelling link between the use of beta features and customer retention. Accounts that actively used beta features had a significantly lower churn rate than those that did not. This is a critical insight for the product team:
