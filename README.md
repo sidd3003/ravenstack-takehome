@@ -11,6 +11,10 @@ By incorporating more granular time-to-churn and user-level data, these insights
 Churn Prediction
 
 The analysis shows that product features are the leading driver of churn, representing 19% of all churned accounts. Customers are leaving either because the product lacks desired functionality or because they struggle to use existing features effectively.
+
+<img width="545" height="520" alt="Image" src="https://github.com/user-attachments/assets/cd607731-cf6c-4d91-87d0-0089249ae9f0" />
+
+
 Support experience and budget concerns follow closely, each contributing 17.3% of churn. These factors collectively account for over a third of customer losses, emphasizing that service quality and cost management are critical to retention. Other factors, like losing users to competitors (15.3%) and pricing (15.2%), are notable but less frequent contributors.
 
 Incorporating time-to-churn and user-level engagement data is recommended to enable a deeper analysis of which signals usage patterns, support interactions, or pricing sensitivity most accurately predict churn. This would allow Ravenstack to design more targeted and effective retention strategies.
