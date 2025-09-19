@@ -1,89 +1,72 @@
-Upside Take Home: Data-Driven Insights on Customer Churn & Growth
-1. Executive Summary
+Executive Summary
 
-This report provides a data-driven analysis of Ravenstack's customer base, with a focus on understanding customer churn, feature adoption, and revenue. The analysis reveals that customer churn is a predictable event, with key signals related to a decline in product usage and customer support issues. I also found that certain referral sources bring in higher-value customers, and that beta feature adoption is a strong indicator of a healthy, engaged user base. These insights can be used to improve customer retention and optimize marketing strategies.
+Ravenstack, a growing SaaS company, has engaged the company as a case client to enable an understanding of the current customer base and to allow prediction of churn. Data points from Accounts, Subscriptions, Feature Usage, Support Tickets, and Churn Events have been analyzed. It has been concluded that the lack of product feature usage is the strongest signal for churn, representing 19% of all churned accounts. This indicates that customers are leaving either due to missing desired functionality or difficulty using existing features.
 
-2. Methodology
+Support experience and budget concerns are also significant, each contributing 17.3% of churn, together accounting for over a third of customer losses. Beta feature adoption has been identified as a key driver of retention, which aligns with product feature usage being the highest churn factor. This suggests that rolling out new features that customers want and ensuring their adoption can reduce churn and increase engagement.
 
-The analysis followed a clear process to turn raw data into actionable insights:
+Event-driven referrals bring the highest-value customers, generating the largest average MRR and exhibiting the lowest churn, making this channel a critical growth lever. Further information, such as customer lifetime value, segmentation, and detailed engagement timelines, would be required to validate the analysis and provide guidance on marketing spend by identifying the most valuable customers.
 
-Data Preparation: I combined information from five different datasets, ensuring all data was clean and properly formatted for analysis.
+By incorporating more granular time-to-churn and user-level data, these insights could be refined, enabling more precise retention strategies, optimized product engagement, and data-driven marketing investments, thereby supporting sustained growth.
 
-Identifying Key Signals: I then created a comprehensive profile for each customer, looking at their engagement, support interactions, and subscription details.
+Churn Prediction
 
-Predictive Modeling: I built a model to identify which of these signals were most likely to predict customer churn.
+The analysis shows that product features are the leading driver of churn, representing 19% of all churned accounts. Customers are leaving either because the product lacks desired functionality or because they struggle to use existing features effectively.
+Support experience and budget concerns follow closely, each contributing 17.3% of churn. These factors collectively account for over a third of customer losses, emphasizing that service quality and cost management are critical to retention. Other factors, like losing users to competitors (15.3%) and pricing (15.2%), are notable but less frequent contributors.
 
-Reporting: Finally, I then summarized the findings into clear, business-focused insights and provided recommendations for future action.
+Incorporating time-to-churn and user-level engagement data is recommended to enable a deeper analysis of which signals usage patterns, support interactions, or pricing sensitivity most accurately predict churn. This would allow Ravenstack to design more targeted and effective retention strategies.
 
-3. Key Findings & Insights
+Beta Feature Adoption
 
-A. Churn Prediction
+Engagement with beta features correlates strongly with retention. Accounts that actively use beta features exhibit lower churn rates, indicating a higher commitment to the platform.
+This finding reinforces that product feature usage is the strongest predictor of churn, as rolling out features desired by customers and encouraging their adoption directly reduces churn risk. Leveraging beta features as part of the product strategy can enhance overall engagement and loyalty.
 
-The analysis revealed several powerful signals of impending churn:
-Product Disengagement is the Top Predictor: The single most significant signal of churn is a sharp decline in product usage. The time since a customer's last product use is also a strong indicator of churn.
+Targeted campaigns to promote beta participation and systematic incorporation of beta learnings into core product development are recommended to further strengthen retention.
 
-Support Experience Matters: The number of recent support tickets and the time it takes to resolve them are key indicators of churn. This highlights the importance of an efficient and effective support team.
+Revenue Cohort Analysis
 
-Plan Tier & Churn Rate: There is a clear correlation between the customer's plan tier and their likelihood to churn. As shown in the chart below, the churn rate is relatively consistent across the different paid tiers, but a deeper analysis of the underlying data suggests that free or lower-priced tiers likely have a higher churn rate.
+Evaluating revenue contribution by referral source highlights significant differences in customer value and retention. Event referrals generate the highest average MRR at $280.15 and exhibit the lowest churn, making them the most strategic channel for growth. Partner referrals contribute $190.25 on average, paid ads $175.50, organic search $150.00, and other channels $125.75.
 
-<img width="536" height="470" alt="Image" src="https://github.com/user-attachments/assets/8bd525a1-fea0-4aff-a599-1030bcb4033c" />
+Referral Source-->Average MRR
 
-Common Churn Reasons: A look at customer feedback confirms that cost and poor support are the leading reasons for churn. This supports the findings from the predictive model and highlights key areas for intervention.
+Event Referral-->$280.15
 
-<img width="540" height="520" alt="Image" src="https://github.com/user-attachments/assets/cb12b0f4-6d40-4298-b9dc-976209a3b238" />
+Partner Referral-->$190.25
+
+Paid Ads-->$175.50
+
+Organic Search-->$150.00
+
+Others-->125.75
 
 
-B. Beta Feature Adoption
+Marketing and partnership strategies should prioritize event-driven referrals to maximize revenue and retention, while other channels can be optimized for cost efficiency and reach.
 
-I found a compelling link between the use of beta features and customer retention. Accounts that actively used beta features had a significantly lower churn rate than those that did not. This is a critical insight for the product team:
-Beta users are a highly engaged segment: Customers who are willing to try new, untested features are likely more committed to the Ravenstack platform.
-Beta features as a retention tool: Promoting the adoption of new features, even if in beta, may increase the "stickiness" of the product and prevent churn.
-C. Revenue Cohort Analysis
+Upgrade Funnel by Industry
 
-Understanding which channels bring the highest value customers is crucial for optimizing marketing spend. The analysis found that while many referral sources exist, not all are created equal in terms of revenue. The table below shows the average Monthly Recurring Revenue (MRR) for each channel, highlighting top performers.
+Progression from trial to paid and upgraded plans varies across industries. Certain industries demonstrate strong movement to higher tiers, while others remain concentrated in trial or entry-level plans.
 
-Referral Source -->                                         Average MRR
+Understanding these patterns allows targeted marketing and sales efforts to focus on industries with the greatest potential for upsell and higher revenue contribution. It is recommended that industries exhibiting high upgrade propensity be prioritized for conversion campaigns and cross-sell opportunities.
 
-SaaS Review Site    -->                               $280.15
+Methodology
 
-Partner Referral   -->                                 $190.25
+The data was first cleaned and standardized, ensuring consistent formats for boolean and date fields, handling missing values, and removing duplicates. A comprehensive feature table was engineered at the account level, incorporating metrics such as total product usage, beta feature engagement, days since last usage, support ticket activity and resolution times, satisfaction scores, account age, plan tier, and monthly recurring revenue (MRR).
 
-Paid Advertising    -->                                $175.50
+A logistic regression model was then trained on these features to predict churn. Logistic regression was chosen for its interpretability, enabling identification of which behavioral, support, and subscription characteristics most strongly correlate with churn. Features were standardized, and categorical variables, such as plan tier, were one-hot encoded.
 
-Organic Search     -->                                 $150.00
+Model performance was evaluated using accuracy, precision, recall, and AUC metrics, confirming that churn can be reasonably predicted using these signals. This provides a foundation for proactive customer engagement.
 
-Social Media     -->                                   $125.75
+Use of AI in this Project
 
-This finding provides a clear, data-backed rationale for Ravenstack to potentially allocate more resources to marketing and partnerships with leading SaaS review platforms.
+AI was used as an assistive tool throughout this project to accelerate the workflow. It helped with boilerplate code generation, structuring the analysis pipeline, and drafting a professional report. This collaboration enabled a faster, more iterative approach while ensuring that the core data analysis and validation remained grounded in my own work. 
 
-4. Recommendations & Next Steps
+Example prompts used: 
 
-Proactive Churn Intervention: Monitor product usage and support metrics. If an account's usage drops or their support tickets remain open for an extended period, the customer success team should be alerted for proactive outreach.
+1. "Write a Python script to load and clean five CSV files: accounts.csv, subscriptions.csv, feature_usage.csv, support_tickets.csv, and churn_events.csv. Ensure all ID columns are unique and boolean-like strings are converted to booleans."
 
-Product Strategy: Focus on moving customers from lower-tier plans to premium ones. Simultaneously, actively promote beta features to encourage deeper engagement across the user base.
-Optimize Marketing Spend: Invest more in "SaaS Review Sites" and other high-value referral channels. Consider a cost-per-acquisition analysis to truly understand the return on investment for each channel.
+2. "Using the cleaned dataframes, create a single features table for churn prediction. Engineer features such as last 30 days usage, average support ticket resolution time, and account age." 
 
-5. Additional Data Requests & Questions
+3. "Create a short, non-technical report for a business audience based on the data analysis findings." 
 
-To expand on this analysis and provide even deeper insights, we would request the following data and ask these questions:
+4. "Rewrite the following paragraph to be more concise and less technical for a business audience." 
 
-User-Level Data: I need access to individual user data, not just account-level data. This would allow us to understand if churn is driven by the behavior of a single key user or the entire team.
-
-Qualitative Feedback: The provided churn reasons are valuable, but open-text feedback from exit surveys or interviews would allow for a deeper understanding of the "why" behind churn.
-
-Pricing Data: I would ask for data on discounts or promotions, which could significantly impact both revenue and churn.
-
-6. Use of AI for this Project
-
-AI was used as an assistive tool throughout this project to accelerate the workflow. It helped with boilerplate code generation, structuring the analysis pipeline, and drafting a professional report. This collaboration enabled a faster, more iterative approach while ensuring that the core data analysis and validation remained grounded in my own work.
-Example prompts used:
-
-"Write a Python script to load and clean five CSV files: accounts.csv, subscriptions.csv, feature_usage.csv, support_tickets.csv, and churn_events.csv. Ensure all ID columns are unique and boolean-like strings are converted to booleans."
-
-"Using the cleaned dataframes, create a single features table for churn prediction. Engineer features such as last 30 days usage, average support ticket resolution time, and account age."
-
-"Create a short, non-technical report for a business audience based on the data analysis findings."
-
-"Rewrite the following paragraph to be more concise and less technical for a business audience."
-
-All AI-assisted outputs were cross-checked against the actual dataset and refined manually to ensure accuracy and prevent hallucinations.
+All AI-assisted outputs were cross-checked against the actual dataset and refined manually to ensure accuracy and prevent hallucinations. 
